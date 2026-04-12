@@ -1,6 +1,6 @@
-<p align="center"><img src="logo.png" alt="docuseal" width="120"></p>
-
 # DocuSeal [![Maintained by StackBlaze](https://img.shields.io/badge/maintained%20by-StackBlaze-blue)](https://stackblaze.com) [![Weekly Updates](https://img.shields.io/badge/updates-weekly-green)](https://github.com/stackblaze-templates/docuseal/actions) [![License](https://img.shields.io/github/license/stackblaze-templates/docuseal)](LICENSE) [![Deploy on StackBlaze](https://img.shields.io/badge/Deploy%20on-StackBlaze-orange)](https://stackblaze.com)
+
+<p align="center"><img src="logo.png" alt="docuseal" width="120"></p>
 
 Open-source document signing and e-signature platform. Alternative to DocuSign with PDF form fields and API access.
 
