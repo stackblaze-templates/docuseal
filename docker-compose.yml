@@ -4,7 +4,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=postgresql://docuseal:docuseal@db:5432/docuseal
+      - DATABASE_URL=postgresql://docuseal:${POSTGRES_PASSWORD}@db:5432/docuseal
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
     depends_on:
       - db
   db:
@@ -12,7 +13,7 @@ services:
     environment:
       POSTGRES_DB: docuseal
       POSTGRES_USER: docuseal
-      POSTGRES_PASSWORD: docuseal
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - db_data:/var/lib/postgresql/data
 volumes:
