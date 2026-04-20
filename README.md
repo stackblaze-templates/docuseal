@@ -8,11 +8,15 @@ Open-source document signing and e-signature platform. Alternative to DocuSign w
 
 ## Local Development
 
+Copy `.env.example` to `.env` and set strong values before starting:
+
 ```bash
+cp .env.example .env
+# Edit .env and set POSTGRES_PASSWORD and SECRET_KEY_BASE
 docker compose up
 ```
 
-See the project files for configuration details.
+> **Warning:** Never use the placeholder values from `.env.example` in production.
 
 ## Deploy on StackBlaze
 
@@ -96,6 +100,21 @@ flowchart LR
 **Best for:** Production workloads, high-traffic applications, business-critical deployments.
 
 </details>
+
+---
+
+## Security
+
+### Required environment variables (production)
+
+| Variable | Description | How to generate |
+|---|---|---|
+| `SECRET_KEY_BASE` | Rails session encryption key | `openssl rand -hex 64` |
+| `POSTGRES_PASSWORD` | PostgreSQL database password | `openssl rand -base64 32` |
+
+**StackBlaze deployments** automatically generate `SECRET_KEY_BASE` and provision a managed database — no manual steps needed.
+
+**Self-hosted / docker compose** deployments must set both variables in `.env` before starting. See `.env.example` for a template.
 
 ---
 
